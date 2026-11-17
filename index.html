@@ -114,9 +114,18 @@
       color: var(--accent);
     }
 
+    /* Sections & Smooth Anchor Offset */
+    section {
+      margin-bottom: 64px;
+    }
+
+    section[id] {
+      scroll-margin-top: 96px;
+    }
+
     /* Hero */
     .hero {
-      padding: 64px 0 44px;
+      padding-top: 56px;
     }
 
     .hero-card {
@@ -196,11 +205,6 @@
       border-color: var(--accent);
     }
 
-    /* Sections */
-    section {
-      padding: 28px 0;
-    }
-
     h2 {
       margin: 0 0 18px;
       font-size: 28px;
@@ -219,6 +223,19 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+    }
+
+    @media (max-width: 860px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 740px) {
@@ -242,9 +259,18 @@
       color: var(--text-muted);
     }
 
-    .pro-card {
-      border-color: var(--accent);
-      background: linear-gradient(180deg, rgba(20, 184, 166, 0.08), transparent), var(--surface);
+    /* Dedicated SimpleBrowsing Pro Section */
+    .pro-section-card {
+      background: linear-gradient(180deg, rgba(20, 184, 166, 0.08), transparent 55%), var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: 24px;
+      padding: 34px 32px;
+    }
+
+    @media (max-width: 640px) {
+      .pro-section-card {
+        padding: 26px 20px;
+      }
     }
 
     .pro-tag {
@@ -253,11 +279,40 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      padding: 2px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
       background: var(--accent);
       color: var(--accent-text);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .pro-sub {
+      margin: 0;
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+
+    .pro-feature-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .pro-feature-box p {
+      margin: 0;
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .pro-callout {
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      border-radius: 16px;
+      padding: 18px 22px;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     /* Accessibility & Dyslexia Guide */
@@ -332,14 +387,14 @@
           Built for effortless reading, dyslexia comfort, and distraction-free cooking. Click once on any messy webpage or recipe blog to open a calm, low-glare reading window.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#features">Explore Features</a>
-          <a class="btn btn-secondary" href="#guide">Accessibility &amp; Dyslexia Guide</a>
+          <a class="btn btn-primary" href="#features">Explore Free Features</a>
+          <a class="btn btn-secondary" href="#pro">See SimpleBrowsing Pro (£3)</a>
         </div>
       </div>
     </section>
 
     <section id="features">
-      <h2>Calm, Clutter-Free Features</h2>
+      <h2>Calm, Clutter-Free Tools (100% Free)</h2>
       <div class="grid-2">
         <article class="card">
           <h3>Clean Reader &amp; Recipe Mode</h3>
@@ -349,26 +404,62 @@
         </article>
 
         <article class="card">
-          <h3>Free Text Colours &amp; Reading Spotlight</h3>
+          <h3>Free Text Colours &amp; Dyslexia Spacing</h3>
           <p>
-            Choose from high-contrast dyslexia-friendly pastel text colours, custom colour pickers, Normal to Extra Large text sizes, wider Dyslexia Spacing, and Reading Spotlight to gently dim surrounding text while you focus.
+            Choose from high-contrast dyslexia-friendly pastel text colours, custom colour pickers, Normal to Extra Large text sizes, and wider Dyslexia Spacing to keep characters clear and uncrowded.
           </p>
         </article>
 
         <article class="card">
-          <h3>Native Read Aloud &amp; Live Volume</h3>
+          <h3>Reading Spotlight</h3>
+          <p>
+            Hover or click any ingredient, recipe step, or article paragraph to keep that single section at 100% bright clarity while gently dimming surrounding text to 35% opacity.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Native Read Aloud with Live Volume</h3>
           <p>
             Listen to any recipe or article using your browser's clearest native-language voices. Includes smooth auto-scrolling, Pause/Resume, speed controls, and a large volume slider that adjusts cleanly between sentences.
           </p>
         </article>
+      </div>
+    </section>
 
-        <article id="pro" class="card pro-card">
-          <span class="pro-tag">SimpleBrowsing Pro — £3 One-Time</span>
-          <h3>Custom Themes &amp; Smart Kitchen Tools</h3>
-          <p>
-            A simple £3 lifetime upgrade with no subscriptions. Unlocks the Custom Themes gallery (Soft Cream, Warm Sepia, Pastel Yellow, Mint Green, Pale Blue, Soft Rose, High-Contrast Yellow/Black), Recipe Scaling (1× / 2× / 3×), and Metric/US Unit Conversion.
-          </p>
-        </article>
+    <section id="pro">
+      <div class="pro-section-card">
+        <span class="pro-tag">Optional Lifetime Upgrade</span>
+        <h2>SimpleBrowsing Pro — One-Time £3 Lifetime Unlock</h2>
+        <p class="pro-sub">
+          No subscriptions, no recurring fees. Unlock once for £3 and restore your licence key anytime via email.
+        </p>
+
+        <div class="grid-3">
+          <div class="pro-feature-box">
+            <h3>Custom Tinted Themes Gallery</h3>
+            <p>
+              Full access to Soft Cream, Warm Sepia, Pastel Yellow, Mint Green, Pale Blue, Soft Rose, and High-Contrast Yellow/Black backgrounds designed to ease visual stress.
+            </p>
+          </div>
+
+          <div class="pro-feature-box">
+            <h3>Smart Recipe Scaling (1×, 2×, 3×)</h3>
+            <p>
+              Automatically recalculate every ingredient quantity for smaller or larger portions in one click—no mental maths required while cooking.
+            </p>
+          </div>
+
+          <div class="pro-feature-box">
+            <h3>Instant Metric / US Unit Conversion</h3>
+            <p>
+              Switch seamlessly between grams/ounces, millilitres/cups, and °C/°F while cooking so any international recipe feels right at home.
+            </p>
+          </div>
+        </div>
+
+        <div class="pro-callout">
+          <strong>Supporting Independent Accessibility Software:</strong> Upgrading to SimpleBrowsing Pro for £3 is a warm way to support independent development—and helps keep all core reader, dyslexia, and Read Aloud tools 100% free for everyone who needs them.
+        </div>
       </div>
     </section>
 
